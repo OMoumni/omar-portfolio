@@ -1,0 +1,221 @@
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Omar Moumni | Informatikstudent</title>
+<style>
+:root {
+  --bg:#242630;
+  --card:#2e323e;
+  --text:#f5f6fa;
+  --muted:#b6bfd0;
+  --accent:#b7d3ff;
+  --line:#454b5c;
+}
+* {box-sizing:border-box}
+html {scroll-behavior:smooth}
+body {
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  font:16px/1.7 Arial,sans-serif;
+}
+.layout {
+  max-width:1160px;
+  margin:auto;
+  padding:55px 25px;
+  display:grid;
+  grid-template-columns:300px 1fr;
+  gap:65px;
+}
+aside {
+  position:sticky;
+  top:35px;
+  align-self:start;
+  text-align:center;
+}
+.avatar {
+  width:180px;height:180px;
+  margin:0 auto 22px;
+  border-radius:50%;
+  background:#40506b;
+  display:grid;
+  place-items:center;
+  font-size:55px;
+  overflow:hidden;
+}
+.avatar img {
+  width:100%;height:100%;
+  object-fit:cover;
+  position:absolute;
+  border-radius:50%;
+}
+.avatar {position:relative}
+h1 {font-size:30px;line-height:1.2;margin:0}
+.role {color:var(--muted);margin:12px 0 25px}
+nav a {
+  display:block;
+  text-decoration:none;
+  color:var(--muted);
+  padding:10px;
+}
+nav a:hover, a:hover {color:white}
+main {min-width:0}
+h2 {
+  margin:0 0 22px;
+  font-size:25px;
+  border-bottom:1px solid var(--line);
+  padding-bottom:12px;
+}
+h3 {margin:0 0 9px;font-size:19px}
+section {margin-bottom:58px}
+p {color:var(--muted)}
+.card {
+  padding:25px;
+  margin-bottom:18px;
+  border:1px solid var(--line);
+  border-radius:15px;
+  background:var(--card);
+}
+.tags {margin-top:15px}
+.tag {
+  display:inline-block;
+  padding:5px 12px;
+  margin:4px 5px 0 0;
+  border-radius:20px;
+  background:#41495b;
+  color:#e1eaff;
+  font-size:13px;
+}
+a {color:var(--accent)}
+.links a {
+  display:inline-block;
+  padding:10px 18px;
+  border:1px solid var(--line);
+  border-radius:9px;
+  margin:5px 5px 5px 0;
+  text-decoration:none;
+}
+.item {margin-bottom:25px}
+.date {color:var(--accent);font-size:14px}
+footer {color:var(--muted);font-size:13px}
+@media(max-width:750px) {
+  .layout {display:block;padding:35px 20px}
+  aside {position:static;margin-bottom:50px}
+  nav a {display:inline-block}
+  section {margin-bottom:45px}
+}
+</style>
+</head>
+<body>
+<div class="layout">
+  <aside>
+    <div class="avatar">
+      OM
+      <img src="profilfoto.jpg"
+           alt="Profilfoto"
+           onerror="this.style.display='none'">
+    </div>
+    <h1>Omar Moumni</h1>
+    <p class="role">Informatikstudent (B.Sc.)<br>Würzburg, Deutschland</p>
+    <nav>
+      <a href="#ueber">Über mich</a>
+      <a href="#projekte">Projekte</a>
+      <a href="#kenntnisse">Kenntnisse</a>
+      <a href="#bildung">Bildungsweg</a>
+      <a href="#kontakt">Kontakt</a>
+    </nav>
+  </aside>
+
+  <main>
+    <section id="ueber">
+      <h2>Über mich</h2>
+      <p>
+        Ich bin ein motivierter Informatikstudent mit Leidenschaft
+        fürs Programmieren. Besonders gern arbeite ich in
+        Teamprojekten, in denen wir gemeinsam praktische Lösungen
+        entwickeln – etwa Webplattformen, Apps oder Backend-Systeme.
+        Ich bin neugierig, lernfreudig und offen für Neues.
+        Herausforderungen sehe ich als Chance, mich fachlich
+        wie persönlich weiterzuentwickeln.
+      </p>
+    </section>
+
+    <section id="projekte">
+      <h2>Meine Projekte</h2>
+      <div class="card">
+        <h3>Warehouse Picking API</h3>
+        <p>REST-API zur Verwaltung von Lagerartikeln und Aufträgen
+        mit einem Picking-Workflow und Clean Architecture.</p>
+        <div class="tags">
+          <span class="tag">Java</span>
+          <span class="tag">REST API</span>
+          <span class="tag">Clean Architecture</span>
+        </div>
+        <p><a href="https://github.com/OMoumni/warehouse"
+              target="_blank" rel="noopener">Projekt auf GitHub ansehen ↗</a></p>
+      </div>
+
+      <div class="card">
+        <h3>mygrep – Gruppenprojekt</h3>
+        <p>Implementierung eines grep-Klons in C mit
+        Kommandozeilenoptionen, Pipe-Eingaben und Tests über Makefile.</p>
+        <div class="tags">
+          <span class="tag">C</span>
+          <span class="tag">Makefile</span>
+          <span class="tag">Teamprojekt</span>
+        </div>
+        <p><a href="https://github.com/gxikv/mygrep"
+              target="_blank" rel="noopener">Projekt auf GitHub ansehen ↗</a></p>
+      </div>
+    </section>
+
+    <section id="kenntnisse">
+      <h2>IT-Kenntnisse</h2>
+      <div class="card">
+        <p><strong>Programmiersprachen:</strong> Java, C, Python, JavaScript</p>
+        <p><strong>Web:</strong> HTML, CSS</p>
+        <p><strong>Datenbanken:</strong> SQL</p>
+        <p><strong>Tools:</strong> Git, GitHub, REST-APIs, Clean Architecture</p>
+      </div>
+    </section>
+
+    <section id="bildung">
+      <h2>Bildungsweg</h2>
+      <div class="item">
+        <div class="date">10/2024 – heute</div>
+        <h3>Informatik (B.Sc.)</h3>
+        <p>Technische Hochschule Würzburg-Schweinfurt (THWS)</p>
+      </div>
+      <div class="item">
+        <div class="date">04/2023 – 09/2024</div>
+        <h3>Informatikstudium</h3>
+        <p>TH Mittelhessen</p>
+      </div>
+      <div class="item">
+        <div class="date">03/2022 – 02/2023</div>
+        <h3>Landesstudienkolleg</h3>
+        <p>Hochschule Wismar – Feststellungsprüfung bestanden</p>
+      </div>
+    </section>
+
+    <section id="kontakt">
+      <h2>Kontakt</h2>
+      <p>
+        Ich interessiere mich für Praktikumsmöglichkeiten
+        im Bereich Informatik und Softwareentwicklung.
+      </p>
+      <div class="links">
+        <a href="mailto:omarmoumni48@gmail.com">E-Mail senden</a>
+        <a href="https://github.com/OMoumni"
+           target="_blank" rel="noopener">GitHub ↗</a>
+      </div>
+    </section>
+
+    <footer>© 2026 Omar Moumni</footer>
+  </main>
+</div>
+</body>
+</html>
