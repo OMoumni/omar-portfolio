@@ -17,6 +17,7 @@
   --tag: #41495b;
   --tag-text: #e1eaff;
   --avatar: #40506b;
+  --shadow: 0 10px 32px #0c10201c;
 }
 
 /* Heller Modus */
@@ -30,6 +31,7 @@
   --tag: #e7edf7;
   --tag-text: #284e84;
   --avatar: #dce6f5;
+  --shadow: 0 10px 32px #162c4812;
 }
 
 * {
@@ -44,7 +46,7 @@ body {
   margin: 0;
   background: var(--bg);
   color: var(--text);
-  font: 16px/1.7 Arial, sans-serif;
+  font: 16px/1.7 system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
   transition: background .25s, color .25s;
 }
 
@@ -139,7 +141,16 @@ p {
   border: 1px solid var(--line);
   border-radius: 15px;
   background: var(--card);
+  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
 }
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+  border-color: var(--accent);
+}
+
+.card p:last-child { margin-bottom: 0; }
 
 .tags {
   margin-top: 15px;
@@ -166,6 +177,12 @@ a {
   border-radius: 9px;
   margin: 5px 5px 5px 0;
   text-decoration: none;
+  transition: background .2s ease, border-color .2s ease;
+}
+
+.links a:hover {
+  background: var(--tag);
+  border-color: var(--accent);
 }
 
 .item {
@@ -182,28 +199,44 @@ footer {
   font-size: 13px;
 }
 
-/* Hell-/Dunkelmodus-Schalter */
+/* Kompakter Hell-/Dunkelmodus-Schalter: nur das Symbol */
 .theme-toggle {
   position: fixed;
   top: 20px;
   right: 24px;
   z-index: 10;
-  display: flex;
-  align-items: center;
-  gap: 8px;
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  padding: 0;
   background: var(--card);
   color: var(--text);
   border: 1px solid var(--line);
-  padding: 10px 15px;
-  border-radius: 30px;
+  border-radius: 50%;
   cursor: pointer;
-  font: inherit;
-  font-size: 14px;
-  box-shadow: 0 3px 12px #00000015;
+  box-shadow: var(--shadow);
+  transition: background .2s, border-color .2s, transform .2s;
 }
 
 .theme-toggle:hover {
   border-color: var(--accent);
+  transform: translateY(-2px);
+}
+
+.theme-toggle:focus-visible,
+a:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.theme-icon {
+  font-size: 23px;
+  line-height: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; }
 }
 
 /* Sprachkenntnisse */
@@ -268,7 +301,7 @@ footer {
         id="themeToggle"
         type="button"
         aria-label="Hellen Modus aktivieren">
-  ☀️ Hellmodus
+  <span class="theme-icon" id="themeIcon" aria-hidden="true">☀️</span>
 </button>
 
 <div class="layout">
@@ -315,6 +348,29 @@ footer {
 
     <section id="projekte">
       <h2>Meine Projekte</h2>
+
+      <div class="card">
+        <h3>AI Workflow Assistant</h3>
+        <p>
+          KI-gestützte Anwendung zur Analyse und Priorisierung von Support-Tickets.
+          Ein interaktives Streamlit-Dashboard zeigt offene Tickets und Kennzahlen;
+          Google Gemini erstellt über Function Calling verständliche Erklärungen
+          und Handlungsempfehlungen. Mit automatisierten Tests und Docker-Unterstützung.
+        </p>
+        <div class="tags">
+          <span class="tag">Python</span>
+          <span class="tag">Google Gemini</span>
+          <span class="tag">Streamlit</span>
+          <span class="tag">Docker</span>
+          <span class="tag">Function Calling</span>
+        </div>
+        <p>
+          <a href="https://github.com/OMoumni/ai-workflow-assistant"
+             target="_blank" rel="noopener noreferrer">
+            Projekt auf GitHub ansehen ↗
+          </a>
+        </p>
+      </div>
 
       <div class="card">
         <h3>Warehouse Picking API</h3>
@@ -379,7 +435,7 @@ footer {
         </p>
         <p>
           <strong>Tools:</strong>
-          Git, GitHub, REST-APIs, Clean Architecture
+          Git, GitHub, Docker, Streamlit, REST-APIs, Clean Architecture
         </p>
       </div>
     </section>
@@ -467,6 +523,7 @@ footer {
 
 <script>
 const themeButton = document.getElementById("themeToggle");
+const themeIcon = document.getElementById("themeIcon");
 
 let savedTheme = "dark";
 
@@ -484,9 +541,7 @@ function setTheme(theme) {
     isLight ? "light" : "dark"
   );
 
-  themeButton.textContent = isLight
-    ? "🌙 Dunkelmodus"
-    : "☀️ Hellmodus";
+  themeIcon.textContent = isLight ? "🌙" : "☀️";
 
   themeButton.setAttribute(
     "aria-label",
