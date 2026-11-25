@@ -261,6 +261,7 @@ nav a { display: flex; align-items: center; gap: 12px; text-align: left; padding
 nav a svg { width: 20px; height: 20px; flex-shrink: 0; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; color: var(--accent); }
 nav a:hover { background: var(--tag); }
 @media (max-width: 750px) { nav { display: flex; flex-wrap: wrap; justify-content: center; width: auto; } nav a { display: inline-flex; } }
+.education-location { font-size: 14px; }
 </style>
  </head>
  <body>
@@ -464,7 +465,8 @@ nav a:hover { background: var(--tag); }
        Informatik (B.Sc.)
       </h3>
       <p>
-       Technische Hochschule Würzburg-Schweinfurt (THWS)
+       Technische Hochschule Würzburg-Schweinfurt (THWS)<br>
+       <span class="education-location" data-i18n="thwsLocation">Würzburg, Deutschland</span>
       </p>
      </div>
      <div class="item">
@@ -472,10 +474,11 @@ nav a:hover { background: var(--tag); }
        04/2023 – 09/2024
       </div>
       <h3 data-i18n="studies">
-       Informatikstudium
+       Informatik (B.Sc.)
       </h3>
       <p>
-       TH Mittelhessen
+       Technische Hochschule Mittelhessen (THM)<br>
+       <span class="education-location" data-i18n="thmLocation">Gießen, Deutschland</span>
       </p>
      </div>
      <div class="item">
@@ -623,7 +626,9 @@ nav a:hover { background: var(--tag); }
     educationTitle:'Bildungsweg',
     currentDate:'10/2024 – heute',
     degreeTitle:'Informatik (B.Sc.)',
-    studies:'Informatikstudium',
+    studies:'Informatik (B.Sc.)',
+    thwsLocation:'Würzburg, Deutschland',
+    thmLocation:'Gießen, Deutschland',
     prep:'Hochschule Wismar – Feststellungsprüfung bestanden',
     languagesTitle:'Sprachkenntnisse',
     arabic:'Arabisch',
@@ -673,7 +678,9 @@ nav a:hover { background: var(--tag); }
     educationTitle:'Education',
     currentDate:'10/2024 – present',
     degreeTitle:'Computer Science (B.Sc.)',
-    studies:'Computer Science Studies',
+    studies:'Computer Science (B.Sc.)',
+    thwsLocation:'Würzburg, Germany',
+    thmLocation:'Gießen, Germany',
     prep:'Hochschule Wismar – Passed university entrance qualification examination',
     languagesTitle:'Languages',
     arabic:'Arabic',
