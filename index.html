@@ -1,87 +1,701 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Portfolio of Omar Moumni, Computer Science student at THWS. Software development, Python, Java and AI projects.">
-<title>Omar Moumni | Computer Science Student</title>
-<style>
-:root{--bg:#242630;--card:#2e323e;--text:#f5f6fa;--muted:#b6bfd0;--accent:#b7d3ff;--line:#454b5c;--tag:#41495b;--tag-text:#e1eaff;--avatar:#40506b;--shadow:0 10px 32px #0c10201c}
-:root[data-theme="light"]{--bg:#f7f8fa;--card:#ffffff;--text:#202431;--muted:#596274;--accent:#2358a4;--line:#d7dce5;--tag:#e7edf7;--tag-text:#284e84;--avatar:#dce6f5;--shadow:0 10px 32px #162c4812}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.7 system-ui,-apple-system,"Segoe UI",Arial,sans-serif;transition:background .25s,color .25s}
-.layout{max-width:1160px;margin:auto;padding:55px 25px;display:grid;grid-template-columns:300px 1fr;gap:65px}
-aside{position:sticky;top:35px;align-self:start;text-align:center}.avatar{width:180px;height:180px;margin:0 auto 22px;border-radius:50%;background:var(--avatar);display:grid;place-items:center;font-size:55px;overflow:hidden;position:relative}.avatar img{width:100%;height:100%;object-fit:cover;position:absolute;border-radius:50%}h1{font-size:30px;line-height:1.2;margin:0}.role{color:var(--muted);margin:12px 0 25px}nav a{display:block;text-decoration:none;color:var(--muted);padding:10px}nav a:hover,a:hover{color:var(--text)}main{min-width:0}h2{margin:0 0 22px;font-size:25px;border-bottom:1px solid var(--line);padding-bottom:12px}h3{margin:0 0 9px;font-size:19px}section{margin-bottom:58px;scroll-margin-top:30px}p{color:var(--muted)}.card{padding:25px;margin-bottom:18px;border:1px solid var(--line);border-radius:15px;background:var(--card);transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease}.card:hover{transform:translateY(-2px);box-shadow:var(--shadow);border-color:var(--accent)}.card p:last-child{margin-bottom:0}.tags{margin-top:15px}.tag{display:inline-block;padding:5px 12px;margin:4px 5px 0 0;border-radius:20px;background:var(--tag);color:var(--tag-text);font-size:13px}a{color:var(--accent)}.links a{display:inline-block;padding:10px 18px;border:1px solid var(--line);border-radius:9px;margin:5px 5px 5px 0;text-decoration:none;transition:background .2s ease,border-color .2s ease}.links a:hover{background:var(--tag);border-color:var(--accent)}.item{margin-bottom:25px}.date{color:var(--accent);font-size:14px}footer{color:var(--muted);font-size:13px}
-.top-controls{position:fixed;top:20px;right:24px;z-index:10;display:flex;gap:10px;align-items:center}.theme-toggle,.lang-toggle{height:46px;background:var(--card);color:var(--text);border:1px solid var(--line);cursor:pointer;box-shadow:var(--shadow);transition:background .2s,border-color .2s,transform .2s}.theme-toggle{display:grid;place-items:center;width:46px;padding:0;border-radius:50%}.lang-toggle{padding:0 15px;border-radius:24px;font-weight:700;letter-spacing:.02em}.theme-toggle:hover,.lang-toggle:hover{border-color:var(--accent);transform:translateY(-2px)}.theme-toggle:focus-visible,.lang-toggle:focus-visible,a:focus-visible{outline:3px solid var(--accent);outline-offset:3px}.theme-icon{font-size:23px;line-height:1}
-.language-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.language{background:var(--card);border:1px solid var(--line);padding:18px 20px;border-radius:12px}.language strong{display:block;margin-bottom:3px}.language span{color:var(--muted);font-size:14px}
-@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important}}
-@media(max-width:750px){.layout{display:block;padding:90px 20px 35px}aside{position:static;margin-bottom:50px}nav a{display:inline-block}section{margin-bottom:45px}.language-grid{grid-template-columns:1fr}.top-controls{right:15px;top:15px}}
+<html data-theme="dark" lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <meta content="Portfolio of Omar Moumni, Computer Science student at THWS. Software development, Python, Java and AI projects." name="description"/>
+  <title>
+   Omar Moumni | Computer Science Student
+  </title>
+  <style>
+   :root{
+  --bg:#242630;
+  --card:#2e323e;
+  --text:#f5f6fa;
+  --muted:#b6bfd0;
+  --accent:#b7d3ff;
+  --line:#454b5c;
+  --tag:#41495b;
+  --tag-text:#e1eaff;
+  --avatar:#40506b;
+  --shadow:0 10px 32px #0c10201c}
+  :root[data-theme="light"]{
+    --bg:#f7f8fa;
+    --card:#ffffff;
+    --text:#202431;
+    --muted:#596274;
+    --accent:#2358a4;
+    --line:#d7dce5;
+    --tag:#e7edf7;
+    --tag-text:#284e84;
+    --avatar:#dce6f5;
+    --shadow:0 10px 32px #162c4812}
+    *{
+      box-sizing:border-box}
+      html{
+        scroll-behavior:smooth}
+        body{
+          margin:0;
+          background:var(--bg);
+          color:var(--text);
+          font:16px/1.7 system-ui,-apple-system,"Segoe UI",Arial,sans-serif;
+          transition:background .25s,color .25s}
+          .layout{
+            max-width:1160px;
+            margin:auto;
+            padding:55px 25px;
+            display:grid;
+            grid-template-columns:300px 1fr;
+            gap:65px}
+            aside{
+              position:sticky;
+              top:35px;
+              align-self:start;
+              text-align:center}
+              .avatar{
+                width:180px;
+                height:180px;
+                margin:0 auto 22px;
+                border-radius:50%;
+                background:var(--avatar);
+                display:grid;
+                place-items:center;
+                font-size:55px;
+                overflow:hidden;
+                position:relative}
+                .avatar img{
+                  width:100%;
+                  height:100%;
+                  object-fit:cover;
+                  position:absolute;
+                  border-radius:50%}
+                  h1{
+                    font-size:30px;
+                    line-height:1.2;
+                    margin:0}
+                    .role{
+                      color:var(--muted);
+                      margin:12px 0 25px}
+                      nav a{
+                        display:block;
+                        text-decoration:none;
+                        color:var(--muted);
+                        padding:10px}
+                        nav a:hover,a:hover{
+                          color:var(--text)}
+                          main{
+                            min-width:0}
+                            h2{
+                              margin:0 0 22px;
+                              font-size:25px;
+                              border-bottom:1px solid var(--line);
+                              padding-bottom:12px}
+                              h3{
+                                margin:0 0 9px;
+                                font-size:19px}
+                                section{
+                                  margin-bottom:58px;
+                                  scroll-margin-top:30px}
+                                  p{
+                                    color:var(--muted)}
+                                    .card{
+                                      padding:25px;
+                                      margin-bottom:18px;
+                                      border:1px solid var(--line);
+                                      border-radius:15px;
+                                      background:var(--card);
+                                      transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease}
+                                      .card:hover{
+                                        transform:translateY(-2px);
+                                        box-shadow:var(--shadow);
+                                        border-color:var(--accent)}
+                                        .card p:last-child{
+                                          margin-bottom:0}
+                                          .tags{
+                                            margin-top:15px}
+                                            .tag{
+                                              display:inline-block;
+                                              padding:5px 12px;
+                                              margin:4px 5px 0 0;
+                                              border-radius:20px;
+                                              background:var(--tag);
+                                              color:var(--tag-text);
+                                              font-size:13px}
+                                              a{
+                                                color:var(--accent)}
+                                                .links a{
+                                                  display:inline-block;
+                                                  padding:10px 18px;
+                                                  border:1px solid var(--line);
+                                                  border-radius:9px;
+                                                  margin:5px 5px 5px 0;
+                                                  text-decoration:none;
+                                                  transition:background .2s ease,border-color .2s ease}
+                                                  .links a:hover{
+                                                    background:var(--tag);
+                                                    border-color:var(--accent)}
+                                                    .item{
+                                                      margin-bottom:25px}
+                                                      .date{
+                                                        color:var(--accent);
+                                                        font-size:14px}
+                                                        footer{
+                                                          color:var(--muted);
+                                                          font-size:13px}
+                                                          .top-controls{
+                                                            position:fixed;
+                                                            top:20px;
+                                                            right:24px;
+                                                            z-index:10;
+                                                            display:flex;
+                                                            gap:10px;
+                                                            align-items:center}
+                                                            .theme-toggle,.lang-toggle{
+                                                              height:46px;
+                                                              background:var(--card);
+                                                              color:var(--text);
+                                                              border:1px solid var(--line);
+                                                              cursor:pointer;
+                                                              box-shadow:var(--shadow);
+                                                              transition:background .2s,border-color .2s,transform .2s}
+                                                              .theme-toggle{
+                                                                display:grid;
+                                                                place-items:center;
+                                                                width:46px;
+                                                                padding:0;
+                                                                border-radius:50%}
+                                                                .lang-toggle{
+                                                                  padding:0 15px;
+                                                                  border-radius:24px;
+                                                                  font-weight:700;
+                                                                  letter-spacing:.02em}
+                                                                  .theme-toggle:hover,.lang-toggle:hover{
+                                                                    border-color:var(--accent);
+                                                                    transform:translateY(-2px)}
+                                                                    .theme-toggle:focus-visible,.lang-toggle:focus-visible,a:focus-visible{
+                                                                      outline:3px solid var(--accent);
+                                                                      outline-offset:3px}
+                                                                      .theme-icon{
+                                                                        font-size:23px;
+                                                                        line-height:1}
+                                                                        .language-grid{
+                                                                          display:grid;
+                                                                          grid-template-columns:1fr 1fr;
+                                                                          gap:16px}
+                                                                          .language{
+                                                                            background:var(--card);
+                                                                            border:1px solid var(--line);
+                                                                            padding:18px 20px;
+                                                                            border-radius:12px}
+                                                                            .language strong{
+                                                                              display:block;
+                                                                              margin-bottom:3px}
+                                                                              .language span{
+                                                                                color:var(--muted);
+                                                                                font-size:14px}
+                                                                                @media(prefers-reduced-motion:reduce){
+                                                                                  *,*::before,*::after{
+                                                                                    scroll-behavior:auto!important;
+                                                                                    transition:none!important}
+                                                                                  }
+                                                                                  @media(max-width:750px){
+                                                                                    .layout{
+                                                                                      display:block;
+                                                                                      padding:90px 20px 35px}
+                                                                                      aside{
+                                                                                        position:static;
+                                                                                        margin-bottom:50px}
+                                                                                        nav a{
+                                                                                          display:inline-block}
+                                                                                          section{
+                                                                                            margin-bottom:45px}
+                                                                                            .language-grid{
+                                                                                              grid-template-columns:1fr}
+                                                                                              .top-controls{
+                                                                                                right:15px;
+                                                                                                top:15px}
+                                                                                              }
+                                                                                              /* Two separate CV downloads (both available in either site language) */
+                                                                                              .cv-grid{
+                                                                                                display:grid;
+                                                                                                grid-template-columns:repeat(2,minmax(0,1fr));
+                                                                                                gap:18px}
+                                                                                                .cv-card{
+                                                                                                  margin-bottom:0;
+                                                                                                  display:flex;
+                                                                                                  flex-direction:column}
+                                                                                                  .cv-card p{
+                                                                                                    margin:0 0 13px}
+                                                                                                    .cv-card .links{
+                                                                                                      margin-top:auto}
+                                                                                                      .cv-card .links a{
+                                                                                                        margin:4px 6px 4px 0;
+                                                                                                        font-size:14px}
+                                                                                                        .cv-card .links .download{
+                                                                                                          background:var(--tag);
+                                                                                                          border-color:var(--accent);
+                                                                                                          font-weight:600}
+                                                                                                          .cv-card .cv-language{
+                                                                                                            font-size:13px;
+                                                                                                            color:var(--accent);
+                                                                                                            font-weight:700;
+                                                                                                            letter-spacing:.04em;
+                                                                                                            margin-bottom:6px}
+                                                                                                            @media(max-width:750px){
+                                                                                                              .cv-grid{
+                                                                                                                grid-template-columns:1fr}
+                                                                                                              }
 
-/* Two separate CV downloads (both available in either site language) */
-.cv-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
-.cv-card{margin-bottom:0;display:flex;flex-direction:column}
-.cv-card p{margin:0 0 13px}
-.cv-card .links{margin-top:auto}
-.cv-card .links a{margin:4px 6px 4px 0;font-size:14px}
-.cv-card .links .download{background:var(--tag);border-color:var(--accent);font-weight:600}
-.cv-card .cv-language{font-size:13px;color:var(--accent);font-weight:700;letter-spacing:.04em;margin-bottom:6px}
-@media(max-width:750px){.cv-grid{grid-template-columns:1fr}}
-
+/* About me: concise, icon-led profile */
+.about-grid { display: grid; grid-template-columns: 1fr; gap: 12px; }
+.about-item { display: flex; align-items: flex-start; gap: 16px; padding: 18px 20px; border: 1px solid var(--line); border-radius: 12px; background: var(--card); }
+.about-icon { flex: 0 0 42px; height: 42px; display: grid; place-items: center; border-radius: 10px; background: var(--tag); color: var(--accent); }
+.about-icon svg { width: 23px; height: 23px; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+.about-item h3 { font-size: 16px; margin: 0 0 4px; }
+.about-item p { margin: 0; }
+@media(max-width: 480px) { .about-item { gap: 12px; padding: 15px; } }
+  
+/* Sidebar navigation icons */
+nav { width: fit-content; margin: 0 auto; }
+nav a { display: flex; align-items: center; gap: 12px; text-align: left; padding: 10px 14px; border-radius: 8px; }
+nav a svg { width: 20px; height: 20px; flex-shrink: 0; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; color: var(--accent); }
+nav a:hover { background: var(--tag); }
+@media (max-width: 750px) { nav { display: flex; flex-wrap: wrap; justify-content: center; width: auto; } nav a { display: inline-flex; } }
 </style>
-</head>
-<body>
-<div class="top-controls">
-  <button class="lang-toggle" id="langToggle" type="button" aria-label="Auf Deutsch wechseln">🇩🇪 DE</button>
-  <button class="theme-toggle" id="themeToggle" type="button" aria-label="Hellen Modus aktivieren"><span class="theme-icon" id="themeIcon" aria-hidden="true">☀️</span></button>
-</div>
-<div class="layout">
-<aside>
-<div class="avatar">OM<img src="profilfoto.png" alt="Profilfoto von Omar Moumni" onerror="this.style.display='none'"></div>
-<h1>Omar Moumni</h1>
-<p class="role" data-i18n="role">Informatikstudent (B.Sc.)<br>Würzburg, Deutschland</p>
-<nav>
-<a href="#ueber" data-i18n="navAbout">Über mich</a><a href="#projekte" data-i18n="navProjects">Projekte</a><a href="#kenntnisse" data-i18n="navSkills">Kenntnisse</a><a href="#bildung" data-i18n="navEducation">Bildungsweg</a><a href="#sprachen" data-i18n="navLanguages">Sprachen</a><a href="#lebenslauf" data-i18n="navCv">Lebenslauf</a><a href="#kontakt" data-i18n="navContact">Kontakt</a>
-</nav>
-</aside>
-<main>
-<section id="ueber"><h2 data-i18n="aboutTitle">Über mich</h2><p data-i18n="aboutBody">Ich bin ein motivierter Informatikstudent mit Leidenschaft fürs Programmieren. Besonders gern arbeite ich in Teamprojekten, in denen wir gemeinsam praktische Lösungen entwickeln – etwa Webplattformen, Apps, Backend-Systeme oder KI-gestützte Anwendungen zur Automatisierung von Arbeitsprozessen. Ich bin neugierig, lernfreudig und offen für Neues. Herausforderungen sehe ich als Chance, mich fachlich wie persönlich weiterzuentwickeln.</p></section>
-<section id="projekte"><h2 data-i18n="projectsTitle">Meine Projekte</h2>
-<div class="card"><h3>AI Workflow Assistant</h3><p data-i18n="aiDesc">KI-gestützte Anwendung zur Analyse und Priorisierung von Support-Tickets. Ein interaktives Streamlit-Dashboard zeigt offene Tickets und Kennzahlen; Google Gemini erstellt über Function Calling verständliche Erklärungen und Handlungsempfehlungen. Mit automatisierten Tests und Docker-Unterstützung.</p><div class="tags"><span class="tag">Python</span><span class="tag">Google Gemini</span><span class="tag">Streamlit</span><span class="tag">Docker</span><span class="tag">Function Calling</span></div><p><a href="https://github.com/OMoumni/ai-workflow-assistant" target="_blank" rel="noopener noreferrer" data-i18n="viewGithub">Projekt auf GitHub ansehen ↗</a></p></div>
-<div class="card"><h3>Warehouse Picking API</h3><p data-i18n="warehouseDesc">REST-API zur Verwaltung von Lagerartikeln und Aufträgen mit einem Picking-Workflow und Clean Architecture.</p><div class="tags"><span class="tag">Java</span><span class="tag">REST API</span><span class="tag">Clean Architecture</span></div><p><a href="https://github.com/OMoumni/warehouse" target="_blank" rel="noopener noreferrer" data-i18n="viewGithub">Projekt auf GitHub ansehen ↗</a></p></div>
-<div class="card"><h3 data-i18n="mygrepTitle">mygrep – Gruppenprojekt</h3><p data-i18n="mygrepDesc">Implementierung eines grep-Klons in C mit Kommandozeilenoptionen, Pipe-Eingaben und Tests über Makefile.</p><div class="tags"><span class="tag">C</span><span class="tag">Makefile</span><span class="tag" data-i18n="teamProject">Teamprojekt</span></div><p><a href="https://github.com/gxikv/mygrep" target="_blank" rel="noopener noreferrer" data-i18n="viewGithub">Projekt auf GitHub ansehen ↗</a></p></div>
-</section>
-<section id="kenntnisse"><h2 data-i18n="skillsTitle">IT-Kenntnisse</h2><div class="card"><p><strong data-i18n="programming">Programmiersprachen:</strong> Java, C, Python, JavaScript</p><p><strong>Web:</strong> HTML, CSS</p><p><strong data-i18n="databases">Datenbanken:</strong> SQL</p><p><strong>Tools:</strong> Git, GitHub, Docker, Streamlit, REST-APIs, Clean Architecture</p><p><strong>MS Office:</strong> Word, Excel, PowerPoint</p></div></section>
-<section id="bildung"><h2 data-i18n="educationTitle">Bildungsweg</h2><div class="item"><div class="date" data-i18n="currentDate">10/2024 – heute</div><h3 data-i18n="degreeTitle">Informatik (B.Sc.)</h3><p>Technische Hochschule Würzburg-Schweinfurt (THWS)</p></div><div class="item"><div class="date">04/2023 – 09/2024</div><h3 data-i18n="studies">Informatikstudium</h3><p>TH Mittelhessen</p></div><div class="item"><div class="date">03/2022 – 02/2023</div><h3>Landesstudienkolleg</h3><p data-i18n="prep">Hochschule Wismar – Feststellungsprüfung bestanden</p></div></section>
-<section id="sprachen"><h2 data-i18n="languagesTitle">Sprachkenntnisse</h2><div class="language-grid"><div class="language"><strong data-i18n="arabic">Arabisch</strong><span data-i18n="native">Muttersprache</span></div><div class="language"><strong data-i18n="german">Deutsch</strong><span data-i18n="fluent">Fließend</span></div><div class="language"><strong data-i18n="english">Englisch</strong><span data-i18n="fluent">Fließend</span></div><div class="language"><strong data-i18n="french">Französisch</strong><span data-i18n="good">Gut</span></div></div></section>
-<section id="lebenslauf">
-  <h2 data-i18n="cvTitle">Curriculum Vitae</h2>
-  <div class="cv-grid">
-    <article class="card cv-card">
-      <div class="cv-language">🇬🇧 EN</div>
-      <h3 data-i18n="cvEnTitle">English CV</h3>
-      <p data-i18n="cvEnDesc">English version of my curriculum vitae.</p>
-      <div class="links">
-        <a href="CV_Omar_Moumni_EN_.pdf" target="_blank" rel="noopener noreferrer" data-i18n="cvViewEn">View PDF ↗</a>
-        <a class="download" href="CV_Omar_Moumni_EN_.pdf" download="CV_Omar_Moumni_EN_.pdf" data-i18n="cvDownloadEn">Download EN ↓</a>
-      </div>
-    </article>
-    <article class="card cv-card">
-      <div class="cv-language">🇩🇪 DE</div>
-      <h3 data-i18n="cvDeTitle">German CV</h3>
-      <p data-i18n="cvDeDesc">German version of my curriculum vitae.</p>
-      <div class="links">
-        <a href="CV_Omar_Moumni_DE_.pdf" target="_blank" rel="noopener noreferrer" data-i18n="cvViewDe">View PDF ↗</a>
-        <a class="download" href="CV_Omar_Moumni_DE.pdf_" download="CV_Omar_Moumni_DE_.pdf" data-i18n="cvDownloadDe">Download DE ↓</a>
-      </div>
-    </article>
+ </head>
+ <body>
+  <div class="top-controls">
+   <button aria-label="Auf Deutsch wechseln" class="lang-toggle" id="langToggle" type="button">
+    🇩🇪 DE
+   </button>
+   <button aria-label="Hellen Modus aktivieren" class="theme-toggle" id="themeToggle" type="button">
+    <span aria-hidden="true" class="theme-icon" id="themeIcon">
+     ☀️
+    </span>
+   </button>
   </div>
-</section>
-<section id="kontakt"><h2 data-i18n="contactTitle">Kontakt</h2><p data-i18n="contactText">Ich interessiere mich für Praktikumsmöglichkeiten im Bereich Informatik und Softwareentwicklung.</p><div class="links"><a href="mailto:omarmoumni48@gmail.com" data-i18n="sendEmail">E-Mail senden</a><a href="https://github.com/OMoumni" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div></section>
-<footer>© 2026 Omar Moumni</footer>
-</main></div>
-<script>
-const translations={
- de:{title:'Omar Moumni | Informatikstudent',role:'Informatikstudent (B.Sc.)<br>Würzburg, Deutschland',navAbout:'Über mich',navProjects:'Projekte',navSkills:'Kenntnisse',navEducation:'Bildungsweg',navLanguages:'Sprachen',navCv:'Lebenslauf',navContact:'Kontakt',aboutTitle:'Über mich',aboutBody:'Ich bin ein motivierter Informatikstudent mit Leidenschaft fürs Programmieren. Besonders gern arbeite ich in Teamprojekten, in denen wir gemeinsam praktische Lösungen entwickeln – etwa Webplattformen, Apps, Backend-Systeme oder KI-gestützte Anwendungen zur Automatisierung von Arbeitsprozessen. Ich bin neugierig, lernfreudig und offen für Neues. Herausforderungen sehe ich als Chance, mich fachlich wie persönlich weiterzuentwickeln.',projectsTitle:'Meine Projekte',aiDesc:'KI-gestützte Anwendung zur Analyse und Priorisierung von Support-Tickets. Ein interaktives Streamlit-Dashboard zeigt offene Tickets und Kennzahlen; Google Gemini erstellt über Function Calling verständliche Erklärungen und Handlungsempfehlungen. Mit automatisierten Tests und Docker-Unterstützung.',warehouseDesc:'REST-API zur Verwaltung von Lagerartikeln und Aufträgen mit einem Picking-Workflow und Clean Architecture.',mygrepTitle:'mygrep – Gruppenprojekt',mygrepDesc:'Implementierung eines grep-Klons in C mit Kommandozeilenoptionen, Pipe-Eingaben und Tests über Makefile.',teamProject:'Teamprojekt',viewGithub:'Projekt auf GitHub ansehen ↗',skillsTitle:'IT-Kenntnisse',programming:'Programmiersprachen:',databases:'Datenbanken:',educationTitle:'Bildungsweg',currentDate:'10/2024 – heute',degreeTitle:'Informatik (B.Sc.)',studies:'Informatikstudium',prep:'Hochschule Wismar – Feststellungsprüfung bestanden',languagesTitle:'Sprachkenntnisse',arabic:'Arabisch',german:'Deutsch',english:'Englisch',french:'Französisch',native:'Muttersprache',fluent:'Fließend',good:'Gut',cvTitle:'Lebensläufe',cvText:'Beide Versionen meines Lebenslaufs stehen als PDF zum Ansehen und Herunterladen bereit.',cvEnTitle:'Englischer Lebenslauf',cvEnDesc:'Englische Version meines Lebenslaufs.',cvViewEn:'PDF ansehen ↗',cvDownloadEn:'EN herunterladen ↓',cvDeTitle:'Deutscher Lebenslauf',cvDeDesc:'Deutsche Version meines Lebenslaufs.',cvViewDe:'PDF ansehen ↗',cvDownloadDe:'DE herunterladen ↓',contactTitle:'Kontakt',contactText:'Ich interessiere mich für Praktikumsmöglichkeiten im Bereich Informatik und Softwareentwicklung.',sendEmail:'E-Mail senden'},
- en:{title:'Omar Moumni | Computer Science Student',role:'Computer Science Student (B.Sc.)<br>Würzburg, Germany',navAbout:'About me',navProjects:'Projects',navSkills:'Skills',navEducation:'Education',navLanguages:'Languages',navCv:'CV',navContact:'Contact',aboutTitle:'About me',aboutBody:'I am a motivated Computer Science student with a passion for programming. I especially enjoy collaborating on practical solutions, such as web platforms, applications, backend systems and AI-powered tools for automating workflows. I am curious, eager to learn and open to new ideas. I see challenges as opportunities to grow both technically and personally.',projectsTitle:'My Projects',aiDesc:'AI-powered application for analysing and prioritising support tickets. An interactive Streamlit dashboard displays open tickets and key metrics, while Google Gemini uses function calling to generate clear explanations and recommended actions. Includes automated tests and Docker support.',warehouseDesc:'REST API for managing warehouse items and orders, featuring a picking workflow and Clean Architecture.',mygrepTitle:'mygrep – Team Project',mygrepDesc:'Developed a grep-like command-line tool in C with command-line flags, piped input and Makefile-based tests.',teamProject:'Team project',viewGithub:'View project on GitHub ↗',skillsTitle:'Technical Skills',programming:'Programming languages:',databases:'Databases:',educationTitle:'Education',currentDate:'10/2024 – present',degreeTitle:'Computer Science (B.Sc.)',studies:'Computer Science Studies',prep:'Hochschule Wismar – Passed university entrance qualification examination',languagesTitle:'Languages',arabic:'Arabic',german:'German',english:'English',french:'French',native:'Native',fluent:'Fluent',good:'Good',cvTitle:'Curriculum Vitae',cvText:'Both versions of my CV are available to view and download as PDFs.',cvEnTitle:'English CV',cvEnDesc:'English version of my curriculum vitae.',cvViewEn:'View PDF ↗',cvDownloadEn:'Download EN ↓',cvDeTitle:'German CV',cvDeDesc:'German version of my curriculum vitae.',cvViewDe:'View PDF ↗',cvDownloadDe:'Download DE ↓',contactTitle:'Contact',contactText:'I am interested in internship opportunities in computer science and software development.',sendEmail:'Send email'}
+  <div class="layout">
+   <aside>
+    <div class="avatar">
+     OM
+     <img alt="Profilfoto von Omar Moumni" onerror="this.style.display='none'" src="profilfoto.png"/>
+    </div>
+    <h1>
+     Omar Moumni
+    </h1>
+    <p class="role" data-i18n="role">
+     Informatikstudent (B.Sc.)
+     <br/>
+     Würzburg, Deutschland
+    </p>
+    <nav>
+     <a href="#ueber">
+      <svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="12" cy="8" r="3"/><path d="M5 21v-2a7 7 0 0 1 14 0v2"/></svg>
+      <span data-i18n="navAbout">Über mich</span>
+     </a>
+     <a href="#projekte">
+      <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M3 7h7l2 2h9v11H3zM3 7V4h7l2 3h9v2"/></svg>
+      <span data-i18n="navProjects">Projekte</span>
+     </a>
+     <a href="#kenntnisse">
+      <svg aria-hidden="true" viewBox="0 0 24 24"><path d="m8 6-6 6 6 6m8-12 6 6-6 6m-2-15-4 18"/></svg>
+      <span data-i18n="navSkills">Kenntnisse</span>
+     </a>
+     <a href="#bildung">
+      <svg aria-hidden="true" viewBox="0 0 24 24"><path d="m2 9 10-5 10 5-10 5zM6 11v6c3 3 9 3 12 0v-6M22 9v7"/></svg>
+      <span data-i18n="navEducation">Bildungsweg</span>
+     </a>
+     <a href="#sprachen">
+      <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M3 5h12M9 3v2M5 8c2 4 5 7 9 9M13 5c-1 6-5 10-10 13M13 21l5-12 5 12m-8-4h6"/></svg>
+      <span data-i18n="navLanguages">Sprachen</span>
+     </a>
+     <a href="#lebenslauf">
+      <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M6 3h8l4 4v14H6zM14 3v5h4M9 12h6m-6 4h6"/></svg>
+      <span data-i18n="navCv">Lebenslauf</span>
+     </a>
+     <a href="#kontakt">
+      <svg aria-hidden="true" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+      <span data-i18n="navContact">Kontakt</span>
+     </a>
+    </nav>
+   </aside>
+   <main>
+    <section id="ueber">
+     <h2 data-i18n="aboutTitle">
+      Über mich
+     </h2>
+     <p data-i18n="aboutBody">Ich bin ein motivierter Informatikstudent mit Leidenschaft fürs Programmieren. Besonders gern arbeite ich in Teamprojekten, in denen wir gemeinsam praktische Lösungen entwickeln – etwa Webplattformen, Apps, Backend-Systeme oder KI-gestützte Anwendungen zur Automatisierung von Arbeitsprozessen. Ich bin neugierig, lernfreudig und offen für Neues. Herausforderungen sehe ich als Chance, mich fachlich wie persönlich weiterzuentwickeln.</p>
+    </section>
+    <section id="projekte">
+     <h2 data-i18n="projectsTitle">
+      Meine Projekte
+     </h2>
+     <div class="card">
+      <h3>
+       AI Workflow Assistant
+      </h3>
+      <p data-i18n="aiDesc">
+       KI-gestützte Anwendung zur Analyse und Priorisierung von Support-Tickets. Ein interaktives Streamlit-Dashboard zeigt offene Tickets und Kennzahlen; Google Gemini erstellt über Function Calling verständliche Erklärungen und Handlungsempfehlungen. Mit automatisierten Tests und Docker-Unterstützung.
+      </p>
+      <div class="tags">
+       <span class="tag">
+        Python
+       </span>
+       <span class="tag">
+        Google Gemini
+       </span>
+       <span class="tag">
+        Streamlit
+       </span>
+       <span class="tag">
+        Docker
+       </span>
+       <span class="tag">
+        Function Calling
+       </span>
+      </div>
+      <p>
+       <a data-i18n="viewGithub" href="https://github.com/OMoumni/ai-workflow-assistant" rel="noopener noreferrer" target="_blank">
+        Projekt auf GitHub ansehen ↗
+       </a>
+      </p>
+     </div>
+     <div class="card">
+      <h3>
+       Warehouse Picking API
+      </h3>
+      <p data-i18n="warehouseDesc">
+       REST-API zur Verwaltung von Lagerartikeln und Aufträgen mit einem Picking-Workflow und Clean Architecture.
+      </p>
+      <div class="tags">
+       <span class="tag">
+        Java
+       </span>
+       <span class="tag">
+        REST API
+       </span>
+       <span class="tag">
+        Clean Architecture
+       </span>
+      </div>
+      <p>
+       <a data-i18n="viewGithub" href="https://github.com/OMoumni/warehouse" rel="noopener noreferrer" target="_blank">
+        Projekt auf GitHub ansehen ↗
+       </a>
+      </p>
+     </div>
+     <div class="card">
+      <h3 data-i18n="mygrepTitle">
+       mygrep – Gruppenprojekt
+      </h3>
+      <p data-i18n="mygrepDesc">
+       Implementierung eines grep-Klons in C mit Kommandozeilenoptionen, Pipe-Eingaben und Tests über Makefile.
+      </p>
+      <div class="tags">
+       <span class="tag">
+        C
+       </span>
+       <span class="tag">
+        Makefile
+       </span>
+       <span class="tag" data-i18n="teamProject">
+        Teamprojekt
+       </span>
+      </div>
+      <p>
+       <a data-i18n="viewGithub" href="https://github.com/gxikv/mygrep" rel="noopener noreferrer" target="_blank">
+        Projekt auf GitHub ansehen ↗
+       </a>
+      </p>
+     </div>
+    </section>
+    <section id="kenntnisse">
+     <h2 data-i18n="skillsTitle">
+      IT-Kenntnisse
+     </h2>
+     <div class="card">
+      <p>
+       <strong data-i18n="programming">
+        Programmiersprachen:
+       </strong>
+       Java, C, Python, JavaScript
+      </p>
+      <p>
+       <strong>
+        Web:
+       </strong>
+       HTML, CSS
+      </p>
+      <p>
+       <strong data-i18n="databases">
+        Datenbanken:
+       </strong>
+       SQL
+      </p>
+      <p>
+       <strong>
+        Tools:
+       </strong>
+       Git, GitHub, Docker, Streamlit, REST-APIs, Clean Architecture
+      </p>
+      <p>
+       <strong data-i18n="os">
+        Betriebssysteme:
+       </strong>
+       Linux (CLI), Windows
+      </p>
+      <p>
+       <strong>
+        Microsoft Office:
+       </strong>
+       Word, Excel, PowerPoint
+      </p>
+     </div>
+    </section>
+    <section id="bildung">
+     <h2 data-i18n="educationTitle">
+      Bildungsweg
+     </h2>
+     <div class="item">
+      <div class="date" data-i18n="currentDate">
+       10/2024 – heute
+      </div>
+      <h3 data-i18n="degreeTitle">
+       Informatik (B.Sc.)
+      </h3>
+      <p>
+       Technische Hochschule Würzburg-Schweinfurt (THWS)
+      </p>
+     </div>
+     <div class="item">
+      <div class="date">
+       04/2023 – 09/2024
+      </div>
+      <h3 data-i18n="studies">
+       Informatikstudium
+      </h3>
+      <p>
+       TH Mittelhessen
+      </p>
+     </div>
+     <div class="item">
+      <div class="date">
+       03/2022 – 02/2023
+      </div>
+      <h3>
+       Landesstudienkolleg
+      </h3>
+      <p data-i18n="prep">
+       Hochschule Wismar – Feststellungsprüfung bestanden
+      </p>
+     </div>
+    </section>
+    <section id="sprachen">
+     <h2 data-i18n="languagesTitle">
+      Sprachkenntnisse
+     </h2>
+     <div class="language-grid">
+      <div class="language">
+       <strong data-i18n="arabic">
+        Arabisch
+       </strong>
+       <span data-i18n="native">
+        Muttersprache
+       </span>
+      </div>
+      <div class="language">
+       <strong data-i18n="german">
+        Deutsch
+       </strong>
+       <span data-i18n="fluent">
+        Fließend
+       </span>
+      </div>
+      <div class="language">
+       <strong data-i18n="english">
+        Englisch
+       </strong>
+       <span data-i18n="fluent">
+        Fließend
+       </span>
+      </div>
+      <div class="language">
+       <strong data-i18n="french">
+        Französisch
+       </strong>
+       <span data-i18n="good">
+        Gut
+       </span>
+      </div>
+     </div>
+    </section>
+    <section id="lebenslauf">
+     <h2 data-i18n="cvTitle">
+      Curriculum Vitae
+     </h2>
+     <div class="cv-grid">
+      <article class="card cv-card">
+       <div class="cv-language">
+        🇬🇧 EN
+       </div>
+       <h3 data-i18n="cvEnTitle">
+        English CV
+       </h3>
+       <p data-i18n="cvEnDesc">
+        English version of my curriculum vitae.
+       </p>
+       <div class="links">
+        <a data-i18n="cvViewEn" href="CV_Omar_Moumni_EN_.pdf" rel="noopener noreferrer" target="_blank">
+         View PDF ↗
+        </a>
+        <a class="download" data-i18n="cvDownloadEn" download="CV_Omar_Moumni_EN_.pdf" href="CV_Omar_Moumni_EN_.pdf">
+         Download EN ↓
+        </a>
+       </div>
+      </article>
+      <article class="card cv-card">
+       <div class="cv-language">
+        🇩🇪 DE
+       </div>
+       <h3 data-i18n="cvDeTitle">
+        German CV
+       </h3>
+       <p data-i18n="cvDeDesc">
+        German version of my curriculum vitae.
+       </p>
+       <div class="links">
+        <a data-i18n="cvViewDe" href="CV_Omar_Moumni_DE_.pdf" rel="noopener noreferrer" target="_blank">
+         View PDF ↗
+        </a>
+        <a class="download" data-i18n="cvDownloadDe" download="CV_Omar_Moumni_DE_.pdf" href="CV_Omar_Moumni_DE_.pdf">
+         Download DE ↓
+        </a>
+       </div>
+      </article>
+     </div>
+    </section>
+    <section id="kontakt">
+     <h2 data-i18n="contactTitle">
+      Kontakt
+     </h2>
+     <p data-i18n="contactText">
+      Ich interessiere mich für Praktikumsmöglichkeiten im Bereich Informatik und Softwareentwicklung.
+     </p>
+     <div class="links">
+      <a data-i18n="sendEmail" href="mailto:omarmoumni48@gmail.com">
+       E-Mail senden
+      </a>
+      <a href="https://github.com/OMoumni" rel="noopener noreferrer" target="_blank">
+       GitHub ↗
+      </a>
+     </div>
+    </section>
+    <footer>
+     © 2026 Omar Moumni
+    </footer>
+   </main>
+  </div>
+  <script>
+   const translations={
+  de: {
+    title:'Omar Moumni | Informatikstudent',
+    role:'Informatikstudent (B.Sc.)<br>Würzburg, Deutschland',
+    navAbout:'Über mich',
+    navProjects:'Projekte',
+    navSkills:'Kenntnisse',
+    navEducation:'Bildungsweg',
+    navLanguages:'Sprachen',
+    navCv:'Lebenslauf',
+    navContact:'Kontakt',
+    aboutTitle:'Über mich',
+    aboutBody:'Ich bin ein motivierter Informatikstudent mit Leidenschaft fürs Programmieren. Besonders gern arbeite ich in Teamprojekten, in denen wir gemeinsam praktische Lösungen entwickeln – etwa Webplattformen, Apps, Backend-Systeme oder KI-gestützte Anwendungen zur Automatisierung von Arbeitsprozessen. Ich bin neugierig, lernfreudig und offen für Neues. Herausforderungen sehe ich als Chance, mich fachlich wie persönlich weiterzuentwickeln.',
+    projectsTitle:'Meine Projekte',
+    aiDesc:'KI-gestützte Anwendung zur Analyse und Priorisierung von Support-Tickets. Ein interaktives Streamlit-Dashboard zeigt offene Tickets und Kennzahlen; Google Gemini erstellt über Function Calling verständliche Erklärungen und Handlungsempfehlungen. Mit automatisierten Tests und Docker-Unterstützung.',
+    warehouseDesc:'REST-API zur Verwaltung von Lagerartikeln und Aufträgen mit einem Picking-Workflow und Clean Architecture.',
+    mygrepTitle:'mygrep – Gruppenprojekt',
+    mygrepDesc:'Implementierung eines grep-Klons in C mit Kommandozeilenoptionen, Pipe-Eingaben und Tests über Makefile.',
+    teamProject:'Teamprojekt',
+    viewGithub:'Projekt auf GitHub ansehen ↗',
+    skillsTitle:'IT-Kenntnisse',
+    programming:'Programmiersprachen:',
+    databases:'Datenbanken:',
+    os:'Betriebssysteme:',
+    educationTitle:'Bildungsweg',
+    currentDate:'10/2024 – heute',
+    degreeTitle:'Informatik (B.Sc.)',
+    studies:'Informatikstudium',
+    prep:'Hochschule Wismar – Feststellungsprüfung bestanden',
+    languagesTitle:'Sprachkenntnisse',
+    arabic:'Arabisch',
+    german:'Deutsch',
+    english:'Englisch',
+    french:'Französisch',
+    native:'Muttersprache',
+    fluent:'Fließend',
+    good:'Gut',
+    cvTitle:'Lebensläufe',
+    cvText:'Beide Versionen meines Lebenslaufs stehen als PDF zum Ansehen und Herunterladen bereit.',
+    cvEnTitle:'Englischer Lebenslauf',
+    cvEnDesc:'Englische Version meines Lebenslaufs.',
+    cvViewEn:'PDF ansehen ↗',
+    cvDownloadEn:'EN herunterladen ↓',
+    cvDeTitle:'Deutscher Lebenslauf',
+    cvDeDesc:'Deutsche Version meines Lebenslaufs.',
+    cvViewDe:'PDF ansehen ↗',
+    cvDownloadDe:'DE herunterladen ↓',
+    contactTitle:'Kontakt',
+    contactText:'Ich interessiere mich für Praktikumsmöglichkeiten im Bereich Informatik und Softwareentwicklung.',
+    sendEmail:'E-Mail senden'
+  },
+  en: {
+    title:'Omar Moumni | Computer Science Student',
+    role:'Computer Science Student (B.Sc.)<br>Würzburg, Germany',
+    navAbout:'About me',
+    navProjects:'Projects',
+    navSkills:'Skills',
+    navEducation:'Education',
+    navLanguages:'Languages',
+    navCv:'CV',
+    navContact:'Contact',
+    aboutTitle:'About me',
+    aboutBody:'I am a motivated Computer Science student with a passion for programming. I especially enjoy collaborating on practical solutions, such as web platforms, applications, backend systems and AI-powered tools for automating workflows. I am curious, eager to learn and open to new ideas. I see challenges as opportunities to grow both technically and personally.',
+    projectsTitle:'My Projects',
+    aiDesc:'AI-powered application for analysing and prioritising support tickets. An interactive Streamlit dashboard displays open tickets and key metrics, while Google Gemini uses function calling to generate clear explanations and recommended actions. Includes automated tests and Docker support.',
+    warehouseDesc:'REST API for managing warehouse items and orders, featuring a picking workflow and Clean Architecture.',
+    mygrepTitle:'mygrep – Team Project',
+    mygrepDesc:'Developed a grep-like command-line tool in C with command-line flags, piped input and Makefile-based tests.',
+    teamProject:'Team project',
+    viewGithub:'View project on GitHub ↗',
+    skillsTitle:'Technical Skills',
+    programming:'Programming languages:',
+    databases:'Databases:',
+    os:'Operating Systems:',
+    educationTitle:'Education',
+    currentDate:'10/2024 – present',
+    degreeTitle:'Computer Science (B.Sc.)',
+    studies:'Computer Science Studies',
+    prep:'Hochschule Wismar – Passed university entrance qualification examination',
+    languagesTitle:'Languages',
+    arabic:'Arabic',
+    german:'German',
+    english:'English',
+    french:'French',
+    native:'Native',
+    fluent:'Fluent',
+    good:'Good',
+    cvTitle:'Curriculum Vitae',
+    cvText:'Both versions of my CV are available to view and download as PDFs.',
+    cvEnTitle:'English CV',
+    cvEnDesc:'English version of my curriculum vitae.',
+    cvViewEn:'View PDF ↗',
+    cvDownloadEn:'Download EN ↓',
+    cvDeTitle:'German CV',
+    cvDeDesc:'German version of my curriculum vitae.',
+    cvViewDe:'View PDF ↗',
+    cvDownloadDe:'Download DE ↓',
+    contactTitle:'Contact',
+    contactText:'I am interested in internship opportunities in computer science and software development.',
+    sendEmail:'Send email'}
 };
 const themeButton=document.getElementById('themeToggle'),themeIcon=document.getElementById('themeIcon'),langToggle=document.getElementById('langToggle');
 function storageGet(key,fallback){try{return localStorage.getItem(key)||fallback}catch{return fallback}}
@@ -91,6 +705,6 @@ function setLanguage(language){const lang=language==='en'?'en':'de',t=translatio
 setTheme(storageGet('omar-theme','dark'));setLanguage(storageGet('omar-language','en'));
 themeButton.addEventListener('click',()=>setTheme(document.documentElement.getAttribute('data-theme')==='dark'?'light':'dark'));
 langToggle.addEventListener('click',()=>setLanguage(document.documentElement.lang==='de'?'en':'de'));
-</script>
-</body>
+  </script>
+ </body>
 </html>
